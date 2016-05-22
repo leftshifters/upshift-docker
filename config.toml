@@ -1,0 +1,23 @@
+concurrent = 1
+
+[[runners]]
+  name = "android runner"
+  url = "http://localhost/ci"
+  token = "xxxxxxxx"
+  executor = "docker"
+  [runners.ssh]
+  [runners.docker]
+    tls_verify = false
+    image = "leftshifters/upshift-docker-android:latest"
+    privileged = true
+    disable_cache = false
+    volumes = ["/data/android-sdk-linux:/usr/local/android-sdk-linux", "/data/gradle:/usr/local/gradle", "/data/.gradle:/root/.gradle"]
+    allowed_images = ["leftshifters:*"]
+  [runners.parallels]
+    base_name = ""
+    disable_snapshots = false
+  [runners.virtualbox]
+    base_name = ""
+    disable_snapshots = false
+  [runners.cache]
+    Insecure = false
