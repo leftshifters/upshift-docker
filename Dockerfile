@@ -34,4 +34,4 @@ RUN apt-get install -qy \
 # Download and install upshift
 RUN curl -fsSL https://raw.githubusercontent.com/leftshifters/upshift/master/upshift > upshift.temp && chmod +x upshift.temp && ./upshift.temp install
 
-VOLUME ["/data/android-sdk-linux:/usr/local/android-sdk-linux", "/data/gradle:/usr/local/gradle"]
+VOLUME ["/usr/local/android-sdk-linux", "/usr/local/gradle"]
